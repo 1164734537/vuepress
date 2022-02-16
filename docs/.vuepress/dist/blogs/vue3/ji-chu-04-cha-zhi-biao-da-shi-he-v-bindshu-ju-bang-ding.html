@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>【基础04】插值表达式和v-bind数据绑定 | Uncle Chen&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/logo.jpg">
+    <script src="https://v1.cnzz.com/z_stat.php?id=1280174405&amp;web_id=1280174405"></script>
+    <meta name="description" content="万丈高楼平地起，地基还得自己起">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.23da5629.css" as="style"><link rel="preload" href="/assets/js/app.4c347e21.js" as="script"><link rel="preload" href="/assets/js/3.47851a5e.js" as="script"><link rel="preload" href="/assets/js/1.9702ffa3.js" as="script"><link rel="preload" href="/assets/js/26.c1d1f05a.js" as="script"><link rel="prefetch" href="/assets/js/10.38508a3c.js"><link rel="prefetch" href="/assets/js/11.0ae322e7.js"><link rel="prefetch" href="/assets/js/12.f5ac1c36.js"><link rel="prefetch" href="/assets/js/13.70cdb56e.js"><link rel="prefetch" href="/assets/js/14.5d63d5fa.js"><link rel="prefetch" href="/assets/js/15.ab6c8a3f.js"><link rel="prefetch" href="/assets/js/16.028748ac.js"><link rel="prefetch" href="/assets/js/17.7fe6bc45.js"><link rel="prefetch" href="/assets/js/18.815827df.js"><link rel="prefetch" href="/assets/js/19.8fb668b7.js"><link rel="prefetch" href="/assets/js/20.fbc94d7c.js"><link rel="prefetch" href="/assets/js/21.998d7f43.js"><link rel="prefetch" href="/assets/js/22.07c6d695.js"><link rel="prefetch" href="/assets/js/23.9b77cfb0.js"><link rel="prefetch" href="/assets/js/24.95cc0c94.js"><link rel="prefetch" href="/assets/js/25.41bb1d48.js"><link rel="prefetch" href="/assets/js/27.48faa332.js"><link rel="prefetch" href="/assets/js/28.05e56e10.js"><link rel="prefetch" href="/assets/js/29.4c324f01.js"><link rel="prefetch" href="/assets/js/30.5022c2f7.js"><link rel="prefetch" href="/assets/js/31.02b2fc13.js"><link rel="prefetch" href="/assets/js/32.e7190cf6.js"><link rel="prefetch" href="/assets/js/33.c7ae5e0d.js"><link rel="prefetch" href="/assets/js/34.1070979b.js"><link rel="prefetch" href="/assets/js/35.d54e930c.js"><link rel="prefetch" href="/assets/js/36.a953cc76.js"><link rel="prefetch" href="/assets/js/4.75c683a5.js"><link rel="prefetch" href="/assets/js/5.90aadf5c.js"><link rel="prefetch" href="/assets/js/6.94663371.js"><link rel="prefetch" href="/assets/js/7.574dd2d1.js"><link rel="prefetch" href="/assets/js/8.4d023698.js"><link rel="prefetch" href="/assets/js/9.31f09d2c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.23da5629.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>Uncle Chen's Blog</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc>万丈高楼平地起，地基还得自己起</p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><!---->
+            
+          <!---->
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.jpg" alt="Uncle Chen's Blog" class="logo"> <span class="site-name">Uncle Chen's Blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/javascript插件/" class="nav-link"><i class="undefined"></i>
+  javascript插件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/开发环境/" class="nav-link"><i class="undefined"></i>
+  开发环境
+</a></li><li class="dropdown-item"><!----> <a href="/categories/常用代码块/" class="nav-link"><i class="undefined"></i>
+  常用代码块
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javascript/" class="nav-link"><i class="undefined"></i>
+  javascript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue3/" class="nav-link"><i class="undefined"></i>
+  vue3
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  回顾
+</a></div><div class="nav-item"><a href="/blogs/Reward/" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  打赏
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><img src="/logo.jpg" alt="author-avatar" class="personal-img" data-v-828910c6> <!----> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>25</h3> <h6 data-v-828910c6>Articles</h6></div> <div data-v-828910c6><h3 data-v-828910c6>16</h3> <h6 data-v-828910c6>Tags</h6></div></div> <ul class="social-links" data-v-828910c6></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/javascript插件/" class="nav-link"><i class="undefined"></i>
+  javascript插件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/开发环境/" class="nav-link"><i class="undefined"></i>
+  开发环境
+</a></li><li class="dropdown-item"><!----> <a href="/categories/常用代码块/" class="nav-link"><i class="undefined"></i>
+  常用代码块
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javascript/" class="nav-link"><i class="undefined"></i>
+  javascript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue3/" class="nav-link"><i class="undefined"></i>
+  vue3
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  回顾
+</a></div><div class="nav-item"><a href="/blogs/Reward/" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  打赏
+</a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>【基础04】插值表达式和v-bind数据绑定</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><!---->
+            
+          <!---->
+          2021
+        </a></span></div></div> <div data-v-1156296a><main class="page"><section><div class="page-title"><h1 class="title">【基础04】插值表达式和v-bind数据绑定</h1> <div data-v-1ff7123e><!----> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>7/5/2021</span></i> <i class="iconfont reco-eye" data-v-1ff7123e><span id="/blogs/vue3/ji-chu-04-cha-zhi-biao-da-shi-he-v-bindshu-ju-bang-ding.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-1ff7123e><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>vue3</span><span class="tag-item" data-v-1ff7123e>vue3基础</span></i></div></div> <div class="theme-reco-content content__default"><h2 id="【基础04】插值表达式和v-bind数据绑定"><a href="#【基础04】插值表达式和v-bind数据绑定" class="header-anchor">#</a> 【基础04】插值表达式和v-bind数据绑定</h2> <p>两个模板语法：插值表达式和v-bind的使用</p> <h3 id="什么是插值表达式"><a href="#什么是插值表达式" class="header-anchor">#</a> 什么是插值表达式？</h3> <p>我以前经常说的<code>字面量</code>，其实正确叫法应该叫做<code>插值表达式</code>，当然我们公司大部分还是叫<code>字面量</code>的,也就是我们经常看到的<code></code>这样的东西。</p> <h3 id="基本代码"><a href="#基本代码" class="header-anchor">#</a> 基本代码</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token constant">DOCTYPE</span> html<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">&quot;en&quot;</span><span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">&quot;UTF-8&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">&quot;viewport&quot;</span> content<span class="token operator">=</span><span class="token string">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span>Demo7<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;https://unpkg.com/vue@next&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">&quot;app&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+    <span class="token keyword">const</span> app <span class="token operator">=</span> Vue<span class="token punctuation">.</span><span class="token function">createApp</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token punctuation">{</span>
+                message<span class="token operator">:</span> <span class="token string">'jspang.com'</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token function">handleItemClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>message <span class="token operator">==</span> <span class="token string">'陈叔叔'</span> <span class="token operator">?</span> <span class="token string">&quot;uncle‘chan&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;陈叔叔&quot;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        template<span class="token operator">:</span> <span class="token string">&quot;&lt;h2 v-on:click='handleItemClick'&gt;{{message}}&lt;/h2&gt;&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> vm <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token string">&quot;#app&quot;</span><span class="token punctuation">)</span>
+
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">&gt;</span>
+</code></pre></div><p>这时候我们看到在<code>template</code>属性中的<code></code>就是插值表达式。也就是说利用这种形式，可以使用data中的变量，展示在模板中。</p> <h3 id="插值表达式输出html标签-v-html指令"><a href="#插值表达式输出html标签-v-html指令" class="header-anchor">#</a> 插值表达式输出html标签-v-html指令</h3> <p>如果我想在变量里，编写一些html的标签，然后输出展现在页面中，这时候会出现点小问题。我们先修改代码，看看问题所在。例如在message中加入<code>&lt;i&gt;</code>标签。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">return</span> <span class="token punctuation">{</span>
+    message<span class="token operator">:</span> <span class="token string">'&lt;i&gt;陈叔叔&lt;/i&gt;'</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这时候如果什么都不做，直接输出，你在浏览器中看到的结果就是下面的样子。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>i<span class="token operator">&gt;</span>陈叔叔<span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+</code></pre></div><p>这并不是你想要的结果，这时候需要使用<code>v-html</code>的标签解决这个问题。把template属性的部分改成下面的样子。需要注意的是这压力要改成&quot;`&quot;符号，否则不能使用双引号这种形式</p> <div class="language-js extra-class"><pre class="language-js"><code>template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;h2 v-html=&quot;message&quot;&gt; &lt;/h2&gt;</span><span class="token template-punctuation string">`</span></span>
+</code></pre></div><p>这时候再预览，就可以看到浏览器中的字变成了斜体。</p> <h3 id="插值表达式只做一次渲染-v-once"><a href="#插值表达式只做一次渲染-v-once" class="header-anchor">#</a> 插值表达式只做一次渲染-v-once</h3> <p>现在这种插值表达式，是跟着data中的数据一起变化的，也就是我们常说的数据双向绑定。但是如果我希望一个插值表达式，只有在第一次渲染去data中的值，而以后不再跟随data变化，这时候就要用到<code>v-once</code>指令。</p> <p>先来看一下目前这种代码，我们为<code>h2</code>标签，加入相应事件<code>handleItemClick</code>,代码如下。</p> <div class="language-js extra-class"><pre class="language-js"><code>template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;h2 v-on:click=&quot;handleItemClick&quot; v-html=&quot;message&quot;&gt; &lt;/h2&gt;</span><span class="token template-punctuation string">`</span></span>
+</code></pre></div><p>这时候在浏览器中可以看到，我们每点击一次h2标签，<code>message</code>的值都是变化的。再改写一下代码。</p> <div class="language-js extra-class"><pre class="language-js"><code>template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;h2 
+                v-on:click=&quot;handleItemClick&quot; 
+                v-html=&quot;message&quot;
+                v-once
+            &gt; &lt;/h2&gt;</span><span class="token template-punctuation string">`</span></span>
+</code></pre></div><p>加入了<code>v-once</code>后，无论data中的数据如何变化，模板也不会再次重新渲染了，这就是<code>v-once</code>的变化。</p> <p>插值表达式中是可以使用JS表达式的</p> <p>其实在插值表达式中是可以使用JS表达式的，最常用的表达式是三元运算符。比如下面这样的代码也是可以的。比如在data中新声明一个变量<code>count</code>，用三元运算符判断是否是大于2，如果大于2显示大，小于2显示小，编写代码如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+    <span class="token keyword">const</span> app <span class="token operator">=</span> Vue<span class="token punctuation">.</span><span class="token function">createApp</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token punctuation">{</span>
+                message<span class="token operator">:</span> <span class="token string">'&lt;i&gt;jspang.com&lt;/i&gt;'</span><span class="token punctuation">,</span>
+                count<span class="token operator">:</span> <span class="token number">5</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token function">handleItemClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>message <span class="token operator">==</span> <span class="token string">'陈叔叔'</span> <span class="token operator">?</span> <span class="token string">&quot;uncle‘chan&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;陈叔叔&quot;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;h2 
+                        v-on:click=&quot;handleItemClick&quot; 
+                        v-html=&quot;message&quot;
+                        v-once
+                    &gt; &lt;/h2&gt;
+                    &lt;div&gt;{{count&gt;2?'大':'小'}}&lt;/div&gt;
+                    </span><span class="token template-punctuation string">`</span></span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> vm <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token string">&quot;#app&quot;</span><span class="token punctuation">)</span>
+
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre></div><p>当然你也可以使用一些简单的表达式，比如下面这些样子的JS表达式.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>div<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token string">'陈'</span><span class="token operator">+</span><span class="token string">'叔叔'</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>div<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+</code></pre></div><p>这些形式的表达式都是可以的，但是如果你想用if语句，就是不可以的，因为只能用JS表达式而不能用语句。</p> <h3 id="v-bind指令使用"><a href="#v-bind指令使用" class="header-anchor">#</a> v-bind指令使用</h3> <p>现在我们给h2标签加入一个title属性，属性的值也想使用<code>message</code>。代码如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>h2 
+  v<span class="token operator">-</span>on<span class="token operator">:</span>click<span class="token operator">=</span><span class="token string">&quot;handleItemClick&quot;</span> 
+  v<span class="token operator">-</span>html<span class="token operator">=</span><span class="token string">&quot;message&quot;</span>
+  v<span class="token operator">-</span>once
+  title<span class="token operator">=</span><span class="token string">&quot;message&quot;</span>
+<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>`
+</code></pre></div><p>这时候浏览器中鼠标放上时显示的确实<code>message</code>这个单词，而并没有出现我们想要的结果。这时候就可以使用<code>v-bind</code>标签了。写成下面的样式就可以了。</p> <div class="language-js extra-class"><pre class="language-js"><code>v<span class="token operator">-</span>bind<span class="token operator">:</span>title<span class="token operator">=</span><span class="token string">&quot;message&quot;</span>
+或者简写：
+<span class="token operator">:</span>title <span class="token operator">=</span> <span class="token string">&quot;message&quot;</span>
+</code></pre></div><h3 id="总结"><a href="#总结" class="header-anchor">#</a> 总结：</h3> <p>插值表达式和一些特殊情况的用法、</p> <p><code>v-html</code>指令</p> <p><code>v-once</code>指令</p> <p>在插值表达式中使用JS表达式</p> <p><code>v-bind</code>指令</p></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-70334359><li class="level-2" data-v-70334359><a href="/blogs/vue3/ji-chu-04-cha-zhi-biao-da-shi-he-v-bindshu-ju-bang-ding.html#【基础04】插值表达式和v-bind数据绑定" class="sidebar-link reco-side-【基础04】插值表达式和v-bind数据绑定" data-v-70334359>【基础04】插值表达式和v-bind数据绑定</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-04-cha-zhi-biao-da-shi-he-v-bindshu-ju-bang-ding.html#什么是插值表达式" class="sidebar-link reco-side-什么是插值表达式" data-v-70334359>什么是插值表达式？</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-04-cha-zhi-biao-da-shi-he-v-bindshu-ju-bang-ding.html#基本代码" class="sidebar-link reco-side-基本代码" data-v-70334359>基本代码</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-04-cha-zhi-biao-da-shi-he-v-bindshu-ju-bang-ding.html#插值表达式输出html标签-v-html指令" class="sidebar-link reco-side-插值表达式输出html标签-v-html指令" data-v-70334359>插值表达式输出html标签-v-html指令</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-04-cha-zhi-biao-da-shi-he-v-bindshu-ju-bang-ding.html#插值表达式只做一次渲染-v-once" class="sidebar-link reco-side-插值表达式只做一次渲染-v-once" data-v-70334359>插值表达式只做一次渲染-v-once</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-04-cha-zhi-biao-da-shi-he-v-bindshu-ju-bang-ding.html#v-bind指令使用" class="sidebar-link reco-side-v-bind指令使用" data-v-70334359>v-bind指令使用</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-04-cha-zhi-biao-da-shi-he-v-bindshu-ju-bang-ding.html#总结" class="sidebar-link reco-side-总结" data-v-70334359>总结：</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><!----><div><div class="sponsor-container" data-v-a142c76a><div class="sponsor-love position-absolute transition-3ms" data-v-a142c76a>
+    Sponsor
+  </div> <a href="https://github.com/yokefellow/vuepress-plugin-sponsor" target="_blank" title="Github" class="sponsor-github position-absolute transition-3ms" data-v-a142c76a></a> <ul class="sponsor-payment-options transition-3ms" data-v-a142c76a><li id="alipay-option" class="transition-3ms" data-v-a142c76a></li> <li id="wechat-option" class="transition-3ms" data-v-a142c76a></li> <li id="qq-option" class="transition-3ms" data-v-a142c76a></li> <li id="paypal-option" class="transition-3ms" data-v-a142c76a></li></ul> <div class="sponsor-qrcode-container position-absolute" style="display:none;" data-v-a142c76a data-v-a142c76a><div class="sponsor-qrcode-info" style="background-image:url();pointer-events:none;display:none;" data-v-a142c76a data-v-a142c76a></div></div> <div class="sponsor-message position-absolute" style="display:none;" data-v-a142c76a data-v-a142c76a>
+      主人忘记设置啦
+    </div></div></div><!----><!----></div></div>
+    <script src="/assets/js/app.4c347e21.js" defer></script><script src="/assets/js/3.47851a5e.js" defer></script><script src="/assets/js/1.9702ffa3.js" defer></script><script src="/assets/js/26.c1d1f05a.js" defer></script>
+  </body>
+</html>

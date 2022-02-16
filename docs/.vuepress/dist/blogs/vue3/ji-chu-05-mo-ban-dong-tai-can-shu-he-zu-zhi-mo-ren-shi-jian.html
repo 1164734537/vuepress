@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>【基础05】模板动态参数和阻止默认事件 | Uncle Chen&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/logo.jpg">
+    <script src="https://v1.cnzz.com/z_stat.php?id=1280174405&amp;web_id=1280174405"></script>
+    <meta name="description" content="万丈高楼平地起，地基还得自己起">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.23da5629.css" as="style"><link rel="preload" href="/assets/js/app.4c347e21.js" as="script"><link rel="preload" href="/assets/js/3.47851a5e.js" as="script"><link rel="preload" href="/assets/js/1.9702ffa3.js" as="script"><link rel="preload" href="/assets/js/27.48faa332.js" as="script"><link rel="prefetch" href="/assets/js/10.38508a3c.js"><link rel="prefetch" href="/assets/js/11.0ae322e7.js"><link rel="prefetch" href="/assets/js/12.f5ac1c36.js"><link rel="prefetch" href="/assets/js/13.70cdb56e.js"><link rel="prefetch" href="/assets/js/14.5d63d5fa.js"><link rel="prefetch" href="/assets/js/15.ab6c8a3f.js"><link rel="prefetch" href="/assets/js/16.028748ac.js"><link rel="prefetch" href="/assets/js/17.7fe6bc45.js"><link rel="prefetch" href="/assets/js/18.815827df.js"><link rel="prefetch" href="/assets/js/19.8fb668b7.js"><link rel="prefetch" href="/assets/js/20.fbc94d7c.js"><link rel="prefetch" href="/assets/js/21.998d7f43.js"><link rel="prefetch" href="/assets/js/22.07c6d695.js"><link rel="prefetch" href="/assets/js/23.9b77cfb0.js"><link rel="prefetch" href="/assets/js/24.95cc0c94.js"><link rel="prefetch" href="/assets/js/25.41bb1d48.js"><link rel="prefetch" href="/assets/js/26.c1d1f05a.js"><link rel="prefetch" href="/assets/js/28.05e56e10.js"><link rel="prefetch" href="/assets/js/29.4c324f01.js"><link rel="prefetch" href="/assets/js/30.5022c2f7.js"><link rel="prefetch" href="/assets/js/31.02b2fc13.js"><link rel="prefetch" href="/assets/js/32.e7190cf6.js"><link rel="prefetch" href="/assets/js/33.c7ae5e0d.js"><link rel="prefetch" href="/assets/js/34.1070979b.js"><link rel="prefetch" href="/assets/js/35.d54e930c.js"><link rel="prefetch" href="/assets/js/36.a953cc76.js"><link rel="prefetch" href="/assets/js/4.75c683a5.js"><link rel="prefetch" href="/assets/js/5.90aadf5c.js"><link rel="prefetch" href="/assets/js/6.94663371.js"><link rel="prefetch" href="/assets/js/7.574dd2d1.js"><link rel="prefetch" href="/assets/js/8.4d023698.js"><link rel="prefetch" href="/assets/js/9.31f09d2c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.23da5629.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>Uncle Chen's Blog</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc>万丈高楼平地起，地基还得自己起</p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><!---->
+            
+          <!---->
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.jpg" alt="Uncle Chen's Blog" class="logo"> <span class="site-name">Uncle Chen's Blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/javascript插件/" class="nav-link"><i class="undefined"></i>
+  javascript插件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/开发环境/" class="nav-link"><i class="undefined"></i>
+  开发环境
+</a></li><li class="dropdown-item"><!----> <a href="/categories/常用代码块/" class="nav-link"><i class="undefined"></i>
+  常用代码块
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javascript/" class="nav-link"><i class="undefined"></i>
+  javascript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue3/" class="nav-link"><i class="undefined"></i>
+  vue3
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  回顾
+</a></div><div class="nav-item"><a href="/blogs/Reward/" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  打赏
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><img src="/logo.jpg" alt="author-avatar" class="personal-img" data-v-828910c6> <!----> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>25</h3> <h6 data-v-828910c6>Articles</h6></div> <div data-v-828910c6><h3 data-v-828910c6>16</h3> <h6 data-v-828910c6>Tags</h6></div></div> <ul class="social-links" data-v-828910c6></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/javascript插件/" class="nav-link"><i class="undefined"></i>
+  javascript插件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/开发环境/" class="nav-link"><i class="undefined"></i>
+  开发环境
+</a></li><li class="dropdown-item"><!----> <a href="/categories/常用代码块/" class="nav-link"><i class="undefined"></i>
+  常用代码块
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javascript/" class="nav-link"><i class="undefined"></i>
+  javascript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue3/" class="nav-link"><i class="undefined"></i>
+  vue3
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  回顾
+</a></div><div class="nav-item"><a href="/blogs/Reward/" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  打赏
+</a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>【基础05】模板动态参数和阻止默认事件</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><!---->
+            
+          <!---->
+          2021
+        </a></span></div></div> <div data-v-1156296a><main class="page"><section><div class="page-title"><h1 class="title">【基础05】模板动态参数和阻止默认事件</h1> <div data-v-1ff7123e><!----> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>7/5/2021</span></i> <i class="iconfont reco-eye" data-v-1ff7123e><span id="/blogs/vue3/ji-chu-05-mo-ban-dong-tai-can-shu-he-zu-zhi-mo-ren-shi-jian.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-1ff7123e><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>vue3</span><span class="tag-item" data-v-1ff7123e>vue3基础</span></i></div></div> <div class="theme-reco-content content__default"><h2 id="【基础05】模板动态参数和阻止默认事件"><a href="#【基础05】模板动态参数和阻止默认事件" class="header-anchor">#</a> 【基础05】模板动态参数和阻止默认事件</h2> <h3 id="v-on的基本用法和简写"><a href="#v-on的基本用法和简写" class="header-anchor">#</a> v-on的基本用法和简写</h3> <p><code>v-on</code>是用来绑定响应事件的，在以前的课程中多次用到了。这里就先写一个最简单的事件，弹出对话框。</p> <div class="language-js extra-class"><pre class="language-js"><code>methods<span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token function">hanldClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'你好啊'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+&lt;h2 v-on:click=&quot;hanldClick&quot;&gt;{{message}}&lt;/h2&gt;
+</span><span class="token template-punctuation string">`</span></span>
+</code></pre></div><p>在浏览器中可以看出，点击<code>&lt;h2&gt;</code>标签，就可以弹出alert效果。</p> <p><code>v-on</code>还有一个简写方法，就是可以不屑<code>v-on:</code>用<code>@</code>代替，比如把代码改成下面的样子，也是完全可以使用的。</p> <div class="language-js extra-class"><pre class="language-js"><code>template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+&lt;h2 @click=&quot;hanldClick&quot;&gt;{{message}}&lt;/h2&gt;
+</span><span class="token template-punctuation string">`</span></span>
+</code></pre></div><p>不仅<code>v-on</code>有简写方法，上节我们学习的<code>v-bind</code>也说过有简写方法</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>h2 v<span class="token operator">-</span>bind<span class="token operator">:</span>title<span class="token operator">=</span><span class="token string">&quot;message&quot;</span><span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token punctuation">{</span>message<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>h2 <span class="token operator">:</span>title<span class="token operator">=</span><span class="token string">&quot;message&quot;</span><span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token punctuation">{</span>message<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+</code></pre></div><p>Vue在开发中还是鼓励大家使用简写，这样可以让代码更加清晰。</p> <h3 id="模板动态参数"><a href="#模板动态参数" class="header-anchor">#</a> 模板动态参数</h3> <p>现在绑定的事件<code>click</code>和<code>title</code>都是固定死的，显得不太灵活，Vue也提供了动态参数，要叫做动态属性的功能。比如这里<code>v-bind:title</code>中的<code>title</code>是来自<code>data</code>中的，就可以这样写。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> app<span class="token operator">=</span>Vue<span class="token punctuation">.</span><span class="token function">createApp</span><span class="token punctuation">(</span><span class="token punctuation">{</span> 
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">{</span>
+            message<span class="token operator">:</span><span class="token string">'陈叔叔'</span> <span class="token punctuation">,</span>
+            name<span class="token operator">:</span><span class="token string">'title'</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">//.........</span>
+    template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+        &lt;h2 
+            @click=&quot;hanldClick&quot;
+            :[name]=&quot;message&quot;
+        &gt;
+        {{message}}
+        &lt;/h2&gt;
+    </span><span class="token template-punctuation string">`</span></span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>可以看到我们在<code>data</code>中，定义了一个name的变量，值是一个字符串，然后在绑定属性时我们使用了<code>[]</code>方括号加上data中变量名的形式。这时候绑定的属性就变的灵活了，这种形式就是模板动态参数，也称为动态属性。</p> <p>可以在浏览器中使用<code>检查</code>的方式，查看此时绑定属性的名称，如果进行修改，比如改成<code>title1</code>,浏览器中也会跟随改变，形成动态效果，这就是动态属性了。</p> <h4 id="事件动态绑定"><a href="#事件动态绑定" class="header-anchor">#</a> 事件动态绑定</h4> <p>这种形式，也可以用到<code>v-on</code>事件绑定当中，比如在<code>data</code>中声明一个<code>event</code>的变量，然后给他一个<code>click</code>,然后用同样的方法实现事件动态绑定。</p> <p>data中的写法如下</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">return</span><span class="token punctuation">{</span>
+    message<span class="token operator">:</span><span class="token string">'陈叔叔'</span> <span class="token punctuation">,</span>
+    name<span class="token operator">:</span><span class="token string">'title'</span><span class="token punctuation">,</span>
+    event<span class="token operator">:</span><span class="token string">'click'</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>模板中的写法如下</p> <div class="language-js extra-class"><pre class="language-js"><code>template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    &lt;h2 
+        @[event]=&quot;hanldClick&quot;
+        :[name]=&quot;message&quot;
+    &gt;
+    {{message}}
+    &lt;/h2&gt;
+</span><span class="token template-punctuation string">`</span></span>
+</code></pre></div><p>这时候就实现了动态绑定方法，可以打开浏览器，看一下效果。当点击<code>&lt;h2&gt;</code>标签时，也会弹出对应的alert效果。当然你还可以帮<code>click</code>改成其他相应事件，比如改成<code>event:'mouseenter'</code>，这样，当鼠标滑入时就可以相应弹出效果了。</p> <h3 id="阻止默认事件"><a href="#阻止默认事件" class="header-anchor">#</a> 阻止默认事件</h3> <p>最常见的默认事件就是表单的默认提交事件，比如我们这里写一个表单，然后写一个属性为<code>submit</code>的按钮，当点击按钮时，表单就会默认提交到对应的网址。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>form action<span class="token operator">=</span><span class="token string">&quot;https://chan.iamalanji.com/&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>button type<span class="token operator">=</span><span class="token string">&quot;submit&quot;</span><span class="token operator">&gt;</span>默认提交<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>form<span class="token operator">&gt;</span>
+</code></pre></div><p>这时候在浏览器中预览，点击“默认提交”按钮，就会立即跳转到我的博客上去，这就是默认响应事件。但是在开发中我们经常需要阻止这种默认响应事件。比如写出下面的代码。</p> <div class="language-js extra-class"><pre class="language-js"><code>methods<span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token function">hanldeClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'陈叔叔'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">hanldeButton</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token comment">//...</span>
+template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+      //....
+&lt;form action=&quot;https://chan.iamalanji.com/&quot; @click=&quot;hanldeButton&quot;&gt;
+    &lt;button type=&quot;submit&quot;&gt;默认提交&lt;/button&gt;
+&lt;/form&gt;
+</span><span class="token template-punctuation string">`</span></span>
+</code></pre></div><p>这样写就可以阻止默认事件方法了，但是这是一个经常要做的操作，每次写太麻烦了，所以Vue也给我们提供了一个模板修饰符，直接可以阻止默认行为。写法如下。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>form 
+    action<span class="token operator">=</span><span class="token string">&quot;https://chan.iamalanji.com/&quot;</span> 
+    @click<span class="token punctuation">.</span>prevent<span class="token operator">=</span><span class="token string">&quot;hanldeButton&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>button type<span class="token operator">=</span><span class="token string">&quot;submit&quot;</span><span class="token operator">&gt;</span>默认提交<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>form<span class="token operator">&gt;</span>
+</code></pre></div><p>methods中的写法</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">hanldeButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'陈叔叔'</span><span class="token punctuation">)</span> 
+<span class="token punctuation">}</span>
+</code></pre></div><p>这样就可以阻止默认事件，直接响应对应事件的内容了。<code>prevent</code>就是阻止默认事件的修饰符。修饰符可以见简化一些代码的编写，也是比较常用的一个操作。</p></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-70334359><li class="level-2" data-v-70334359><a href="/blogs/vue3/ji-chu-05-mo-ban-dong-tai-can-shu-he-zu-zhi-mo-ren-shi-jian.html#【基础05】模板动态参数和阻止默认事件" class="sidebar-link reco-side-【基础05】模板动态参数和阻止默认事件" data-v-70334359>【基础05】模板动态参数和阻止默认事件</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-05-mo-ban-dong-tai-can-shu-he-zu-zhi-mo-ren-shi-jian.html#v-on的基本用法和简写" class="sidebar-link reco-side-v-on的基本用法和简写" data-v-70334359>v-on的基本用法和简写</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-05-mo-ban-dong-tai-can-shu-he-zu-zhi-mo-ren-shi-jian.html#模板动态参数" class="sidebar-link reco-side-模板动态参数" data-v-70334359>模板动态参数</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-05-mo-ban-dong-tai-can-shu-he-zu-zhi-mo-ren-shi-jian.html#阻止默认事件" class="sidebar-link reco-side-阻止默认事件" data-v-70334359>阻止默认事件</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><!----><div><div class="sponsor-container" data-v-a142c76a><div class="sponsor-love position-absolute transition-3ms" data-v-a142c76a>
+    Sponsor
+  </div> <a href="https://github.com/yokefellow/vuepress-plugin-sponsor" target="_blank" title="Github" class="sponsor-github position-absolute transition-3ms" data-v-a142c76a></a> <ul class="sponsor-payment-options transition-3ms" data-v-a142c76a><li id="alipay-option" class="transition-3ms" data-v-a142c76a></li> <li id="wechat-option" class="transition-3ms" data-v-a142c76a></li> <li id="qq-option" class="transition-3ms" data-v-a142c76a></li> <li id="paypal-option" class="transition-3ms" data-v-a142c76a></li></ul> <div class="sponsor-qrcode-container position-absolute" style="display:none;" data-v-a142c76a data-v-a142c76a><div class="sponsor-qrcode-info" style="background-image:url();pointer-events:none;display:none;" data-v-a142c76a data-v-a142c76a></div></div> <div class="sponsor-message position-absolute" style="display:none;" data-v-a142c76a data-v-a142c76a>
+      主人忘记设置啦
+    </div></div></div><!----><!----></div></div>
+    <script src="/assets/js/app.4c347e21.js" defer></script><script src="/assets/js/3.47851a5e.js" defer></script><script src="/assets/js/1.9702ffa3.js" defer></script><script src="/assets/js/27.48faa332.js" defer></script>
+  </body>
+</html>

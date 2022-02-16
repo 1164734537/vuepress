@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>【基础07】计算属性-computed | Uncle Chen&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/logo.jpg">
+    <script src="https://v1.cnzz.com/z_stat.php?id=1280174405&amp;web_id=1280174405"></script>
+    <meta name="description" content="万丈高楼平地起，地基还得自己起">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.23da5629.css" as="style"><link rel="preload" href="/assets/js/app.4c347e21.js" as="script"><link rel="preload" href="/assets/js/3.47851a5e.js" as="script"><link rel="preload" href="/assets/js/1.9702ffa3.js" as="script"><link rel="preload" href="/assets/js/29.4c324f01.js" as="script"><link rel="prefetch" href="/assets/js/10.38508a3c.js"><link rel="prefetch" href="/assets/js/11.0ae322e7.js"><link rel="prefetch" href="/assets/js/12.f5ac1c36.js"><link rel="prefetch" href="/assets/js/13.70cdb56e.js"><link rel="prefetch" href="/assets/js/14.5d63d5fa.js"><link rel="prefetch" href="/assets/js/15.ab6c8a3f.js"><link rel="prefetch" href="/assets/js/16.028748ac.js"><link rel="prefetch" href="/assets/js/17.7fe6bc45.js"><link rel="prefetch" href="/assets/js/18.815827df.js"><link rel="prefetch" href="/assets/js/19.8fb668b7.js"><link rel="prefetch" href="/assets/js/20.fbc94d7c.js"><link rel="prefetch" href="/assets/js/21.998d7f43.js"><link rel="prefetch" href="/assets/js/22.07c6d695.js"><link rel="prefetch" href="/assets/js/23.9b77cfb0.js"><link rel="prefetch" href="/assets/js/24.95cc0c94.js"><link rel="prefetch" href="/assets/js/25.41bb1d48.js"><link rel="prefetch" href="/assets/js/26.c1d1f05a.js"><link rel="prefetch" href="/assets/js/27.48faa332.js"><link rel="prefetch" href="/assets/js/28.05e56e10.js"><link rel="prefetch" href="/assets/js/30.5022c2f7.js"><link rel="prefetch" href="/assets/js/31.02b2fc13.js"><link rel="prefetch" href="/assets/js/32.e7190cf6.js"><link rel="prefetch" href="/assets/js/33.c7ae5e0d.js"><link rel="prefetch" href="/assets/js/34.1070979b.js"><link rel="prefetch" href="/assets/js/35.d54e930c.js"><link rel="prefetch" href="/assets/js/36.a953cc76.js"><link rel="prefetch" href="/assets/js/4.75c683a5.js"><link rel="prefetch" href="/assets/js/5.90aadf5c.js"><link rel="prefetch" href="/assets/js/6.94663371.js"><link rel="prefetch" href="/assets/js/7.574dd2d1.js"><link rel="prefetch" href="/assets/js/8.4d023698.js"><link rel="prefetch" href="/assets/js/9.31f09d2c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.23da5629.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>Uncle Chen's Blog</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc>万丈高楼平地起，地基还得自己起</p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><!---->
+            
+          <!---->
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.jpg" alt="Uncle Chen's Blog" class="logo"> <span class="site-name">Uncle Chen's Blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/javascript插件/" class="nav-link"><i class="undefined"></i>
+  javascript插件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/开发环境/" class="nav-link"><i class="undefined"></i>
+  开发环境
+</a></li><li class="dropdown-item"><!----> <a href="/categories/常用代码块/" class="nav-link"><i class="undefined"></i>
+  常用代码块
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javascript/" class="nav-link"><i class="undefined"></i>
+  javascript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue3/" class="nav-link"><i class="undefined"></i>
+  vue3
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  回顾
+</a></div><div class="nav-item"><a href="/blogs/Reward/" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  打赏
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><img src="/logo.jpg" alt="author-avatar" class="personal-img" data-v-828910c6> <!----> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>25</h3> <h6 data-v-828910c6>Articles</h6></div> <div data-v-828910c6><h3 data-v-828910c6>16</h3> <h6 data-v-828910c6>Tags</h6></div></div> <ul class="social-links" data-v-828910c6></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/javascript插件/" class="nav-link"><i class="undefined"></i>
+  javascript插件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/开发环境/" class="nav-link"><i class="undefined"></i>
+  开发环境
+</a></li><li class="dropdown-item"><!----> <a href="/categories/常用代码块/" class="nav-link"><i class="undefined"></i>
+  常用代码块
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javascript/" class="nav-link"><i class="undefined"></i>
+  javascript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue3/" class="nav-link"><i class="undefined"></i>
+  vue3
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  回顾
+</a></div><div class="nav-item"><a href="/blogs/Reward/" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  打赏
+</a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>【基础07】计算属性-computed</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><!---->
+            
+          <!---->
+          2021
+        </a></span></div></div> <div data-v-1156296a><main class="page"><section><div class="page-title"><h1 class="title">【基础07】计算属性-computed</h1> <div data-v-1ff7123e><!----> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>7/5/2021</span></i> <i class="iconfont reco-eye" data-v-1ff7123e><span id="/blogs/vue3/ji-chu-07-ji-suan-shu-xing-computed.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-1ff7123e><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>vue3</span><span class="tag-item" data-v-1ff7123e>vue3基础</span></i></div></div> <div class="theme-reco-content content__default"><h2 id="【基础07】计算属性-computed"><a href="#【基础07】计算属性-computed" class="header-anchor">#</a> 【基础07】计算属性-computed</h2> <p>计算属性的特性是：当计算属性依赖的内容发生变更时，才会重新执行计算。</p> <h3 id="基本页面和准备变量"><a href="#基本页面和准备变量" class="header-anchor">#</a> 基本页面和准备变量</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token constant">DOCTYPE</span> html<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">&quot;en&quot;</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">&quot;UTF-8&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">&quot;viewport&quot;</span> content<span class="token operator">=</span><span class="token string">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span>Vue中的计算属性<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;https://unpkg.com/vue@next&quot;</span> <span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">&quot;app&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+
+    <span class="token keyword">const</span> app<span class="token operator">=</span>Vue<span class="token punctuation">.</span><span class="token function">createApp</span><span class="token punctuation">(</span><span class="token punctuation">{</span> 
+        <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span><span class="token punctuation">{</span>
+                message<span class="token operator">:</span><span class="token string">'陈'</span> <span class="token punctuation">,</span> 
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        methods<span class="token operator">:</span><span class="token punctuation">{</span>
+            <span class="token function">handleItemClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+               <span class="token keyword">this</span><span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>message<span class="token operator">==</span><span class="token string">'陈'</span><span class="token operator">?</span><span class="token string">'叔叔'</span><span class="token operator">:</span><span class="token string">'陈'</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+            &lt;h2&gt; {{message}}&lt;/h2&gt;
+        </span><span class="token template-punctuation string">`</span></span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span> 
+    <span class="token keyword">const</span> vm<span class="token operator">=</span>app<span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token string">&quot;#app&quot;</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">&gt;</span>
+</code></pre></div><p>有了基本的Vue基本结构后，我们先在Data中生命两个变量，单价(price)和数量（count）。单价设置为10，数量设置为2个。data中的代码如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span><span class="token punctuation">{</span>
+        message<span class="token operator">:</span><span class="token string">'陈'</span> <span class="token punctuation">,</span> 
+        price<span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span>
+        count<span class="token operator">:</span><span class="token number">2</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>然后我们在模板<code>template</code>中打印出两个变量的综合<code>price * count</code>。</p> <div class="language-js extra-class"><pre class="language-js"><code>template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> &lt;h2&gt; {{price * count}}&lt;/h2&gt;</span><span class="token template-punctuation string">`</span></span>
+</code></pre></div><p>如果 一切正常的话，这时候打开浏览器预览，你应该可以看到页面上显示的是<code>20</code>。</p> <p>这种方法当然可以，但是显得不够优雅，也没有语义化。如果你想进行语义化，你可能想到的第一个办法就是写一个<code>getTotal</code>的方法。</p> <div class="language-js extra-class"><pre class="language-js"><code>methods<span class="token operator">:</span><span class="token punctuation">{</span>
+        <span class="token function">getTotal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>price <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> &lt;h2&gt; {{getTotal()}}&lt;/h2&gt;</span><span class="token template-punctuation string">`</span></span>
+</code></pre></div><p>这时候你再次查看浏览器，依然可以得到同样的结果。也许你还看不出来什么问题，但此时他确实存在一些问题，问题就是只要页面中有一个值重新渲染了，他都会重新执行。</p> <h3 id="methods方法无法满足的需求"><a href="#methods方法无法满足的需求" class="header-anchor">#</a> methods方法无法满足的需求</h3> <p>如何看出这个问题那？我们可以稍微修改一下代码，让每次得到的值都不同。这时候可以使用获得时间戳的方法，来获得当前的时间戳。</p> <div class="language-js extra-class"><pre class="language-js"><code>methods<span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token function">getTotal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>我们同时在模板中，打印出<code>message</code>的值，代码如下。</p> <div class="language-js extra-class"><pre class="language-js"><code>template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> 
+    &lt;h2&gt;{{message}}&lt;/h2&gt;
+    &lt;h2&gt; {{getTotal()}}&lt;/h2&gt;
+</span><span class="token template-punctuation string">`</span></span>
+</code></pre></div><p>这时候打开浏览器的控制台<code>console</code>，然后在里边通过手都的方式修改<code>message</code>的值<code>vm.message='1111'</code>，比如修改为<code>chen</code>。这时候问题产生了，你会发现<code>getTotal( )</code>方法被重新执行了。这就是这个问题的所在，这个问题其实可以用今天的主角<code>coumputed</code>计算属性来解决。</p> <h3 id="编写计算属性"><a href="#编写计算属性" class="header-anchor">#</a> 编写计算属性</h3> <p>还是获取当前的时间戳，但是写在了计算属性中。计算属性的关键字是<code>computed</code>,然后里边可以写计算用的方法，这里我起名叫做<code>total</code>，当然你可以起任何的名字。</p> <div class="language-js extra-class"><pre class="language-js"><code>computed<span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token function">total</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>然后我们把上面模板中的方法<code>getTotal( )</code>换成计算属性<code>total</code>。模板的代码如下：</p> <div class="language-js extra-class"><pre class="language-js"><code>template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> 
+    &lt;h2&gt;{{message}}&lt;/h2&gt;
+    &lt;h2&gt; {{total}}&lt;/h2&gt;
+</span><span class="token template-punctuation string">`</span></span>
+</code></pre></div><p>这时候到浏览器中，用手动的方法，修改<code>message</code>的值，<code>total</code>的值就不会进行改变了。</p> <div class="language-js extra-class"><pre class="language-js"><code>vm<span class="token punctuation">.</span>message<span class="token operator">=</span><span class="token string">'1111'</span>
+</code></pre></div><p>通过这个例子，你会对普通方法和计算属性的区别有所了解。这时候我们作一下总结：</p> <ol><li>方法methods：只要页面重新渲染，就会重新执行方法</li> <li>计算属性computed: 当计算属性依赖的内容发生变更时，才会重新执行计算</li></ol> <h3 id="计算属性-computed实例"><a href="#计算属性-computed实例" class="header-anchor">#</a> 计算属性 -computed实例</h3> <p>我们还是用<code>单价X数量=总和</code>这个小例子，来说明具体计算属性的使用方法。修改当前代码，把计算属性中<code>total( )</code>方法内容修改。不同的是我们这次加入一个按钮，每点击一下按钮，就会让数量<code>count</code>加1。</p> <p>我们先来修改计算属性中的内容。</p> <div class="language-js extra-class"><pre class="language-js"><code>computed<span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token function">total</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>price <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span>count
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>然后在模板中写一个按钮，每次点击按钮<code>count</code>数量进行增加。</p> <div class="language-js extra-class"><pre class="language-js"><code>methods<span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token function">addCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">++</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> 
+    &lt;h2&gt;{{message}}&lt;/h2&gt;
+    &lt;h2&gt; {{total}}&lt;/h2&gt;
+    &lt;button @click=&quot;addCount&quot;&gt;再买一个&lt;/button&gt;
+</span><span class="token template-punctuation string">`</span></span>
+</code></pre></div><p>这时候我们再到浏览器中查看效果，当点击按钮的时候，计算属性会帮助我们完成模板的自动更新。</p> <p>总结一下，Vue中的计算属性，重点在于理解计算属性和普通methods方法的区别，当你明白了两者的区别后，在工作中就可以清楚的知道什么时候该用计算属性，什么时候该用vue的方法了。</p></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-70334359><li class="level-2" data-v-70334359><a href="/blogs/vue3/ji-chu-07-ji-suan-shu-xing-computed.html#【基础07】计算属性-computed" class="sidebar-link reco-side-【基础07】计算属性-computed" data-v-70334359>【基础07】计算属性-computed</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-07-ji-suan-shu-xing-computed.html#基本页面和准备变量" class="sidebar-link reco-side-基本页面和准备变量" data-v-70334359>基本页面和准备变量</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-07-ji-suan-shu-xing-computed.html#methods方法无法满足的需求" class="sidebar-link reco-side-methods方法无法满足的需求" data-v-70334359>methods方法无法满足的需求</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-07-ji-suan-shu-xing-computed.html#编写计算属性" class="sidebar-link reco-side-编写计算属性" data-v-70334359>编写计算属性</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-07-ji-suan-shu-xing-computed.html#计算属性-computed实例" class="sidebar-link reco-side-计算属性-computed实例" data-v-70334359>计算属性 -computed实例</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><!----><div><div class="sponsor-container" data-v-a142c76a><div class="sponsor-love position-absolute transition-3ms" data-v-a142c76a>
+    Sponsor
+  </div> <a href="https://github.com/yokefellow/vuepress-plugin-sponsor" target="_blank" title="Github" class="sponsor-github position-absolute transition-3ms" data-v-a142c76a></a> <ul class="sponsor-payment-options transition-3ms" data-v-a142c76a><li id="alipay-option" class="transition-3ms" data-v-a142c76a></li> <li id="wechat-option" class="transition-3ms" data-v-a142c76a></li> <li id="qq-option" class="transition-3ms" data-v-a142c76a></li> <li id="paypal-option" class="transition-3ms" data-v-a142c76a></li></ul> <div class="sponsor-qrcode-container position-absolute" style="display:none;" data-v-a142c76a data-v-a142c76a><div class="sponsor-qrcode-info" style="background-image:url();pointer-events:none;display:none;" data-v-a142c76a data-v-a142c76a></div></div> <div class="sponsor-message position-absolute" style="display:none;" data-v-a142c76a data-v-a142c76a>
+      主人忘记设置啦
+    </div></div></div><!----><!----></div></div>
+    <script src="/assets/js/app.4c347e21.js" defer></script><script src="/assets/js/3.47851a5e.js" defer></script><script src="/assets/js/1.9702ffa3.js" defer></script><script src="/assets/js/29.4c324f01.js" defer></script>
+  </body>
+</html>

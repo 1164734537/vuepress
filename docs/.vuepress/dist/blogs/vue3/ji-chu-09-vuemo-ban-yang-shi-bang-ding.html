@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>【基础09】Vue模板样式绑定 | Uncle Chen&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/logo.jpg">
+    <script src="https://v1.cnzz.com/z_stat.php?id=1280174405&amp;web_id=1280174405"></script>
+    <meta name="description" content="万丈高楼平地起，地基还得自己起">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.23da5629.css" as="style"><link rel="preload" href="/assets/js/app.4c347e21.js" as="script"><link rel="preload" href="/assets/js/3.47851a5e.js" as="script"><link rel="preload" href="/assets/js/1.9702ffa3.js" as="script"><link rel="preload" href="/assets/js/31.02b2fc13.js" as="script"><link rel="prefetch" href="/assets/js/10.38508a3c.js"><link rel="prefetch" href="/assets/js/11.0ae322e7.js"><link rel="prefetch" href="/assets/js/12.f5ac1c36.js"><link rel="prefetch" href="/assets/js/13.70cdb56e.js"><link rel="prefetch" href="/assets/js/14.5d63d5fa.js"><link rel="prefetch" href="/assets/js/15.ab6c8a3f.js"><link rel="prefetch" href="/assets/js/16.028748ac.js"><link rel="prefetch" href="/assets/js/17.7fe6bc45.js"><link rel="prefetch" href="/assets/js/18.815827df.js"><link rel="prefetch" href="/assets/js/19.8fb668b7.js"><link rel="prefetch" href="/assets/js/20.fbc94d7c.js"><link rel="prefetch" href="/assets/js/21.998d7f43.js"><link rel="prefetch" href="/assets/js/22.07c6d695.js"><link rel="prefetch" href="/assets/js/23.9b77cfb0.js"><link rel="prefetch" href="/assets/js/24.95cc0c94.js"><link rel="prefetch" href="/assets/js/25.41bb1d48.js"><link rel="prefetch" href="/assets/js/26.c1d1f05a.js"><link rel="prefetch" href="/assets/js/27.48faa332.js"><link rel="prefetch" href="/assets/js/28.05e56e10.js"><link rel="prefetch" href="/assets/js/29.4c324f01.js"><link rel="prefetch" href="/assets/js/30.5022c2f7.js"><link rel="prefetch" href="/assets/js/32.e7190cf6.js"><link rel="prefetch" href="/assets/js/33.c7ae5e0d.js"><link rel="prefetch" href="/assets/js/34.1070979b.js"><link rel="prefetch" href="/assets/js/35.d54e930c.js"><link rel="prefetch" href="/assets/js/36.a953cc76.js"><link rel="prefetch" href="/assets/js/4.75c683a5.js"><link rel="prefetch" href="/assets/js/5.90aadf5c.js"><link rel="prefetch" href="/assets/js/6.94663371.js"><link rel="prefetch" href="/assets/js/7.574dd2d1.js"><link rel="prefetch" href="/assets/js/8.4d023698.js"><link rel="prefetch" href="/assets/js/9.31f09d2c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.23da5629.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>Uncle Chen's Blog</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc>万丈高楼平地起，地基还得自己起</p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><!---->
+            
+          <!---->
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.jpg" alt="Uncle Chen's Blog" class="logo"> <span class="site-name">Uncle Chen's Blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/javascript插件/" class="nav-link"><i class="undefined"></i>
+  javascript插件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/开发环境/" class="nav-link"><i class="undefined"></i>
+  开发环境
+</a></li><li class="dropdown-item"><!----> <a href="/categories/常用代码块/" class="nav-link"><i class="undefined"></i>
+  常用代码块
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javascript/" class="nav-link"><i class="undefined"></i>
+  javascript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue3/" class="nav-link"><i class="undefined"></i>
+  vue3
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  回顾
+</a></div><div class="nav-item"><a href="/blogs/Reward/" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  打赏
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><img src="/logo.jpg" alt="author-avatar" class="personal-img" data-v-828910c6> <!----> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>25</h3> <h6 data-v-828910c6>Articles</h6></div> <div data-v-828910c6><h3 data-v-828910c6>16</h3> <h6 data-v-828910c6>Tags</h6></div></div> <ul class="social-links" data-v-828910c6></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/javascript插件/" class="nav-link"><i class="undefined"></i>
+  javascript插件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/开发环境/" class="nav-link"><i class="undefined"></i>
+  开发环境
+</a></li><li class="dropdown-item"><!----> <a href="/categories/常用代码块/" class="nav-link"><i class="undefined"></i>
+  常用代码块
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javascript/" class="nav-link"><i class="undefined"></i>
+  javascript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue3/" class="nav-link"><i class="undefined"></i>
+  vue3
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  回顾
+</a></div><div class="nav-item"><a href="/blogs/Reward/" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  打赏
+</a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>【基础09】Vue模板样式绑定</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><!---->
+            
+          <!---->
+          2021
+        </a></span></div></div> <div data-v-1156296a><main class="page"><section><div class="page-title"><h1 class="title">【基础09】Vue模板样式绑定</h1> <div data-v-1ff7123e><!----> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>7/5/2021</span></i> <i class="iconfont reco-eye" data-v-1ff7123e><span id="/blogs/vue3/ji-chu-09-vuemo-ban-yang-shi-bang-ding.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-1ff7123e><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>vue3</span><span class="tag-item" data-v-1ff7123e>vue3基础</span></i></div></div> <div class="theme-reco-content content__default"><h2 id="【基础09】vue模板样式绑定"><a href="#【基础09】vue模板样式绑定" class="header-anchor">#</a> 【基础09】Vue模板样式绑定</h2> <p>Vue中的一些关于样式(style)的内容</p> <h3 id="准备干净的页面"><a href="#准备干净的页面" class="header-anchor">#</a> 准备干净的页面</h3> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>width=device-width, initial-scale=1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Demo14<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>https://unpkg.com/vue@next<span class="token punctuation">&quot;</span></span> <span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">const</span> app<span class="token operator">=</span>Vue<span class="token punctuation">.</span><span class="token function">createApp</span><span class="token punctuation">(</span><span class="token punctuation">{</span> 
+
+        template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+            &lt;h2&gt;陈叔叔&lt;/h2&gt;  
+        </span><span class="token template-punctuation string">`</span></span> 
+    <span class="token punctuation">}</span><span class="token punctuation">)</span> 
+    <span class="token keyword">const</span> vm<span class="token operator">=</span>app<span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token string">&quot;#app&quot;</span><span class="token punctuation">)</span>
+
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="写两个最基本的样式并引入到模板"><a href="#写两个最基本的样式并引入到模板" class="header-anchor">#</a> 写两个最基本的样式并引入到模板</h3> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">&lt;style&gt;
+    .red</span><span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span><span class="token punctuation">}</span>
+    <span class="token selector">.green</span><span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span>green<span class="token punctuation">;</span><span class="token punctuation">}</span>
+    <span class="token selector">.background</span><span class="token punctuation">{</span> <span class="token property">background-color</span><span class="token punctuation">:</span> orange<span class="token punctuation">;</span><span class="token punctuation">}</span>
+&lt;/style&gt;
+</code></pre></div><p>引用样式,在Vue的模板中引用和普通的html的方法一样。直接写class加上类名就可以了。</p> <div class="language-js extra-class"><pre class="language-js"><code>template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    &lt;h2 class=&quot;red&quot;&gt;陈叔叔&lt;/h2&gt;  
+</span><span class="token template-punctuation string">`</span></span>
+</code></pre></div><p>这时候你可以考虑一个问题，如果你希望程序足够灵活，样式也是可以控制的，这样引入样式的方法就不行了。你需要先在Data中声明变量，然后在模板<code>template</code>中进行绑定。</p> <p>声明data变量:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        classString<span class="token operator">:</span><span class="token string">'red'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>有了这个变量（或者叫做数据项）以后，就可以用bind的形式进行绑定。</p> <div class="language-html extra-class"><pre class="language-html"><code> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name"><span class="token namespace">v-bind:</span>class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>classString<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>陈叔叔<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>classString<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>陈叔叔<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>绑定同样使用<code>v-bind</code>，你也可以使用简写<code>:</code>。上面的两种形式都可以进行绑定。这时候你可以到浏览器中查看一下效果，如果一切正常，此时应该还是红色的。</p> <p>此时你可以利用浏览器的控制台，输入对应的代码，直接控制样式了。</p> <div class="language-js extra-class"><pre class="language-js"><code>vm<span class="token punctuation">.</span>$data<span class="token punctuation">.</span>classString<span class="token operator">=</span><span class="token string">'green'</span>
+</code></pre></div><h3 id="vue中用对象和数组的形式控制样式"><a href="#vue中用对象和数组的形式控制样式" class="header-anchor">#</a> Vue中用对象和数组的形式控制样式</h3> <p><strong>对象的绑定方式</strong></p> <p>比如现在用对象的形式进行绑定样式，好处是一次可以绑定多个样式。比如这样的代码。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        classString<span class="token operator">:</span><span class="token string">'red'</span><span class="token punctuation">,</span>
+        classObject<span class="token operator">:</span><span class="token punctuation">{</span>red<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>background<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>值为<code>true</code>代表绑定，值为<code>false</code>代表不绑定这个样式。</p> <p>然后进行绑定</p> <div class="language-html extra-class"><pre class="language-html"><code>template:`
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>classObject<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>陈叔叔<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>  
+`
+</code></pre></div><p>这时候再到浏览器中查看效果，就会有两个样式被绑定了<code>red</code>和<code>background</code>。如果你这首把red改为false，那效果就是只有背景颜色，没有字体颜色了。</p> <p><strong>数组的绑定方式</strong></p> <p>再来看一下数组的绑定方式，数组也是可以绑定多个样式的。</p> <p>代码如下:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        classString<span class="token operator">:</span><span class="token string">'red'</span><span class="token punctuation">,</span>
+        classObject<span class="token operator">:</span><span class="token punctuation">{</span>red<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>background<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        classArray<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">'green'</span><span class="token punctuation">,</span><span class="token string">'background'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>这时候再修改一下绑定值,页面样式就变成了绿字，橙色的底啦。</p> <div class="language-html extra-class"><pre class="language-html"><code>template:`
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>classArray<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>陈叔叔<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>  
+`
+</code></pre></div><p>你也可以在这种数组的数据项中，再嵌套对象的形式。</p> <div class="language-js extra-class"><pre class="language-js"><code>classArray<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">'green'</span><span class="token punctuation">,</span><span class="token string">'background'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>red<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+</code></pre></div><p>如果看不到效果，可以在CSS样式中增加<code>!important</code>,当然你也可以在浏览器的控制台查看。</p> <h3 id="初步总结"><a href="#初步总结" class="header-anchor">#</a> 初步总结：</h3> <ul><li><p>通过普通字符串进行绑定；</p></li> <li><p>通过对象的方式进行绑定；</p></li> <li><p>通过数组的方式进行绑定。</p></li></ul> <h3 id="vue中子组件样式的绑定和行内样式如何编写"><a href="#vue中子组件样式的绑定和行内样式如何编写" class="header-anchor">#</a> Vue中子组件样式的绑定和行内样式如何编写</h3> <p><strong>子组件如何绑定样式</strong></p> <p>新增一个子组件</p> <div class="language-js extra-class"><pre class="language-js"><code>app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'child'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+    template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+        &lt;div&gt;child&lt;/div&gt;
+    </span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>有了子组件后，就可以在父组件的模板中进行使用了，使用就是直接写一个类似html的标签进去就可以。</p> <div class="language-html extra-class"><pre class="language-html"><code>template:`
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>classArray<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>陈叔叔<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>child</span> <span class="token punctuation">/&gt;</span></span>
+`
+</code></pre></div><p><strong>如何区分父子组件</strong></p> <p>在<code>vue.createApp( )</code>方法中用对象形式<code>{ }</code>配置的一般叫做父组件，而下面使用的其他组件，叫做子组件。<strong>你也可以这样理解，主动调用的是父组件，被调用的是子组件</strong>。</p> <p>最简单的为子组件添加样式的方法，就是自己给子组件加上<code>class</code>。</p> <div class="language-js extra-class"><pre class="language-js"><code>app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'child'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+    template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+        &lt;div class=&quot;green&quot;&gt;child&lt;/div&gt;
+    </span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>这时候子组件的字体颜色就变成了绿色。你还可以把class写在调用子组件的地方（也就是写在父组件里），例如下面的代码。</p> <div class="language-js extra-class"><pre class="language-js"><code>template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    &lt;h2 :class=&quot;classArray&quot;&gt;陈叔叔&lt;/h2&gt;
+    &lt;sonCom class='green' /&gt;
+</span><span class="token template-punctuation string">`</span></span>
+</code></pre></div><p>先去掉子组件里的class，在调用地方增加class样式。这时候效果也是一样的。</p> <p><strong>子组件使用样式的坑</strong></p> <p>这时候我们修改一下子组件，再写一个<code>&lt;div&gt;</code>进去，里边写上<code>uncle</code>的字样。这时候再来看结果。</p> <div class="language-js extra-class"><pre class="language-js"><code>app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'child'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+    template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+        &lt;div&gt;child&lt;/div&gt;
+        &lt;div&gt;uncle&lt;/div&gt;
+    </span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>你会发现两个<code>&lt;div&gt;</code>的样式都不起作用了。那我们如何让它变成绿色那，其实只有再两个并列的<code>&lt;div&gt;</code>外层，加上一个包括性的标签就可以了。也就是说让子组件的最外层只有一个根元素。</p> <div class="language-js extra-class"><pre class="language-js"><code>app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'child'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+    template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+        &lt;div&gt;
+ 			&lt;div&gt;child&lt;/div&gt;
+        	&lt;div&gt;uncle&lt;/div&gt;
+        &lt;/div&gt;
+    </span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>这样就又变成了绿色字体。还有一种用到动态绑定的方法，直接绑定属性中的class。</p> <div class="language-js extra-class"><pre class="language-js"><code>app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'child'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+    template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+        &lt;div :class=&quot;$attrs.class&quot;&gt;child&lt;/div&gt;
+        &lt;div&gt;陈叔叔&lt;/div&gt; 
+    </span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="行内样式的编写"><a href="#行内样式的编写" class="header-anchor">#</a> 行内样式的编写</h3> <p>什么是行内样式?就是自己在模板的DOM元素上写CSS样式，比如下面的这样。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>h2 style<span class="token operator">=</span><span class="token string">&quot;color:orange;&quot;</span><span class="token operator">&gt;</span>陈叔叔<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+</code></pre></div><p>除了这种写法以外，Vue中也为我们扩展了一些内容，让行内样式的写法更直观和灵活。你可以直接在data中编写样式，比如在Data中这样写。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span><span class="token punctuation">{</span>
+        styleString<span class="token operator">:</span><span class="token string">'color:orange;'</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>然后用绑定行内样式的形式，在模板中进行绑定。</p> <div class="language-js extra-class"><pre class="language-js"><code>template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    &lt;h2 :style=&quot;styleString&quot;&gt;陈叔叔&lt;/h2&gt;
+</span><span class="token template-punctuation string">`</span></span>
+</code></pre></div><p>**你也可以用对象的形式在data中编写CSS样式。**比如写成下面的代码，然后再进行绑定。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span><span class="token punctuation">{</span>
+       <span class="token comment">//.....</span>
+        styleString<span class="token operator">:</span><span class="token string">'color:orange;'</span><span class="token punctuation">,</span>
+        styleObject<span class="token operator">:</span><span class="token punctuation">{</span>
+            color<span class="token operator">:</span><span class="token string">'red'</span><span class="token punctuation">,</span>
+            background<span class="token operator">:</span><span class="token string">'yellow'</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>在写行内样式的使用，个人觉的对象的写法更加直观和简洁，所以建议小伙伴可以采用这种对象的形式来进行编写。</p></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-70334359><li class="level-2" data-v-70334359><a href="/blogs/vue3/ji-chu-09-vuemo-ban-yang-shi-bang-ding.html#【基础09】vue模板样式绑定" class="sidebar-link reco-side-【基础09】vue模板样式绑定" data-v-70334359>【基础09】Vue模板样式绑定</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-09-vuemo-ban-yang-shi-bang-ding.html#准备干净的页面" class="sidebar-link reco-side-准备干净的页面" data-v-70334359>准备干净的页面</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-09-vuemo-ban-yang-shi-bang-ding.html#写两个最基本的样式并引入到模板" class="sidebar-link reco-side-写两个最基本的样式并引入到模板" data-v-70334359>写两个最基本的样式并引入到模板</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-09-vuemo-ban-yang-shi-bang-ding.html#vue中用对象和数组的形式控制样式" class="sidebar-link reco-side-vue中用对象和数组的形式控制样式" data-v-70334359>Vue中用对象和数组的形式控制样式</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-09-vuemo-ban-yang-shi-bang-ding.html#初步总结" class="sidebar-link reco-side-初步总结" data-v-70334359>初步总结：</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-09-vuemo-ban-yang-shi-bang-ding.html#vue中子组件样式的绑定和行内样式如何编写" class="sidebar-link reco-side-vue中子组件样式的绑定和行内样式如何编写" data-v-70334359>Vue中子组件样式的绑定和行内样式如何编写</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-09-vuemo-ban-yang-shi-bang-ding.html#行内样式的编写" class="sidebar-link reco-side-行内样式的编写" data-v-70334359>行内样式的编写</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><!----><div><div class="sponsor-container" data-v-a142c76a><div class="sponsor-love position-absolute transition-3ms" data-v-a142c76a>
+    Sponsor
+  </div> <a href="https://github.com/yokefellow/vuepress-plugin-sponsor" target="_blank" title="Github" class="sponsor-github position-absolute transition-3ms" data-v-a142c76a></a> <ul class="sponsor-payment-options transition-3ms" data-v-a142c76a><li id="alipay-option" class="transition-3ms" data-v-a142c76a></li> <li id="wechat-option" class="transition-3ms" data-v-a142c76a></li> <li id="qq-option" class="transition-3ms" data-v-a142c76a></li> <li id="paypal-option" class="transition-3ms" data-v-a142c76a></li></ul> <div class="sponsor-qrcode-container position-absolute" style="display:none;" data-v-a142c76a data-v-a142c76a><div class="sponsor-qrcode-info" style="background-image:url();pointer-events:none;display:none;" data-v-a142c76a data-v-a142c76a></div></div> <div class="sponsor-message position-absolute" style="display:none;" data-v-a142c76a data-v-a142c76a>
+      主人忘记设置啦
+    </div></div></div><!----><!----></div></div>
+    <script src="/assets/js/app.4c347e21.js" defer></script><script src="/assets/js/3.47851a5e.js" defer></script><script src="/assets/js/1.9702ffa3.js" defer></script><script src="/assets/js/31.02b2fc13.js" defer></script>
+  </body>
+</html>

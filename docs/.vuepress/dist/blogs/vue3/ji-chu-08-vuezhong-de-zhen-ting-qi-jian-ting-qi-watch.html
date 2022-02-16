@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>【基础08】Vue中的侦听器/监听器-watch | Uncle Chen&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/logo.jpg">
+    <script src="https://v1.cnzz.com/z_stat.php?id=1280174405&amp;web_id=1280174405"></script>
+    <meta name="description" content="万丈高楼平地起，地基还得自己起">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.23da5629.css" as="style"><link rel="preload" href="/assets/js/app.4c347e21.js" as="script"><link rel="preload" href="/assets/js/3.47851a5e.js" as="script"><link rel="preload" href="/assets/js/1.9702ffa3.js" as="script"><link rel="preload" href="/assets/js/30.5022c2f7.js" as="script"><link rel="prefetch" href="/assets/js/10.38508a3c.js"><link rel="prefetch" href="/assets/js/11.0ae322e7.js"><link rel="prefetch" href="/assets/js/12.f5ac1c36.js"><link rel="prefetch" href="/assets/js/13.70cdb56e.js"><link rel="prefetch" href="/assets/js/14.5d63d5fa.js"><link rel="prefetch" href="/assets/js/15.ab6c8a3f.js"><link rel="prefetch" href="/assets/js/16.028748ac.js"><link rel="prefetch" href="/assets/js/17.7fe6bc45.js"><link rel="prefetch" href="/assets/js/18.815827df.js"><link rel="prefetch" href="/assets/js/19.8fb668b7.js"><link rel="prefetch" href="/assets/js/20.fbc94d7c.js"><link rel="prefetch" href="/assets/js/21.998d7f43.js"><link rel="prefetch" href="/assets/js/22.07c6d695.js"><link rel="prefetch" href="/assets/js/23.9b77cfb0.js"><link rel="prefetch" href="/assets/js/24.95cc0c94.js"><link rel="prefetch" href="/assets/js/25.41bb1d48.js"><link rel="prefetch" href="/assets/js/26.c1d1f05a.js"><link rel="prefetch" href="/assets/js/27.48faa332.js"><link rel="prefetch" href="/assets/js/28.05e56e10.js"><link rel="prefetch" href="/assets/js/29.4c324f01.js"><link rel="prefetch" href="/assets/js/31.02b2fc13.js"><link rel="prefetch" href="/assets/js/32.e7190cf6.js"><link rel="prefetch" href="/assets/js/33.c7ae5e0d.js"><link rel="prefetch" href="/assets/js/34.1070979b.js"><link rel="prefetch" href="/assets/js/35.d54e930c.js"><link rel="prefetch" href="/assets/js/36.a953cc76.js"><link rel="prefetch" href="/assets/js/4.75c683a5.js"><link rel="prefetch" href="/assets/js/5.90aadf5c.js"><link rel="prefetch" href="/assets/js/6.94663371.js"><link rel="prefetch" href="/assets/js/7.574dd2d1.js"><link rel="prefetch" href="/assets/js/8.4d023698.js"><link rel="prefetch" href="/assets/js/9.31f09d2c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.23da5629.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>Uncle Chen's Blog</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc>万丈高楼平地起，地基还得自己起</p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><!---->
+            
+          <!---->
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.jpg" alt="Uncle Chen's Blog" class="logo"> <span class="site-name">Uncle Chen's Blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/javascript插件/" class="nav-link"><i class="undefined"></i>
+  javascript插件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/开发环境/" class="nav-link"><i class="undefined"></i>
+  开发环境
+</a></li><li class="dropdown-item"><!----> <a href="/categories/常用代码块/" class="nav-link"><i class="undefined"></i>
+  常用代码块
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javascript/" class="nav-link"><i class="undefined"></i>
+  javascript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue3/" class="nav-link"><i class="undefined"></i>
+  vue3
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  回顾
+</a></div><div class="nav-item"><a href="/blogs/Reward/" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  打赏
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><img src="/logo.jpg" alt="author-avatar" class="personal-img" data-v-828910c6> <!----> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>25</h3> <h6 data-v-828910c6>Articles</h6></div> <div data-v-828910c6><h3 data-v-828910c6>16</h3> <h6 data-v-828910c6>Tags</h6></div></div> <ul class="social-links" data-v-828910c6></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/javascript插件/" class="nav-link"><i class="undefined"></i>
+  javascript插件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/开发环境/" class="nav-link"><i class="undefined"></i>
+  开发环境
+</a></li><li class="dropdown-item"><!----> <a href="/categories/常用代码块/" class="nav-link"><i class="undefined"></i>
+  常用代码块
+</a></li><li class="dropdown-item"><!----> <a href="/categories/javascript/" class="nav-link"><i class="undefined"></i>
+  javascript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue3/" class="nav-link"><i class="undefined"></i>
+  vue3
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  回顾
+</a></div><div class="nav-item"><a href="/blogs/Reward/" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  打赏
+</a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>【基础08】Vue中的侦听器/监听器-watch</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><!---->
+            
+          <!---->
+          2021
+        </a></span></div></div> <div data-v-1156296a><main class="page"><section><div class="page-title"><h1 class="title">【基础08】Vue中的侦听器/监听器-watch</h1> <div data-v-1ff7123e><!----> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>7/5/2021</span></i> <i class="iconfont reco-eye" data-v-1ff7123e><span id="/blogs/vue3/ji-chu-08-vuezhong-de-zhen-ting-qi-jian-ting-qi-watch.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-1ff7123e><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>vue3</span><span class="tag-item" data-v-1ff7123e>vue3基础</span><span class="tag-item" data-v-1ff7123e>侦听器和计算属性的区别</span></i></div></div> <div class="theme-reco-content content__default"><h2 id="【基础08】vue中的侦听器-监听器-watch"><a href="#【基础08】vue中的侦听器-监听器-watch" class="header-anchor">#</a> 【基础08】Vue中的侦听器/监听器-watch</h2> <p>Vue中的侦听器（也有叫监听器），它可以侦听data中值的变化，做出相应的操作。这看起来和计算属性（computed）很像，但如果你足够细心，也可以发现一些区别</p> <h3 id="计算属性代码块"><a href="#计算属性代码块" class="header-anchor">#</a> 计算属性代码块</h3> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>width=device-width, initial-scale=1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Demo12-Vue中的计算属性<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>https://unpkg.com/vue@next<span class="token punctuation">&quot;</span></span> <span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+
+    <span class="token keyword">const</span> app<span class="token operator">=</span>Vue<span class="token punctuation">.</span><span class="token function">createApp</span><span class="token punctuation">(</span><span class="token punctuation">{</span> 
+        <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span><span class="token punctuation">{</span>
+                price<span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span>
+        		count<span class="token operator">:</span><span class="token number">2</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        methods<span class="token operator">:</span><span class="token punctuation">{</span>
+            <span class="token function">addCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">++</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        computed<span class="token operator">:</span><span class="token punctuation">{</span>
+             <span class="token function">total</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>price <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span>count
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+       template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> 
+            &lt;h2&gt;{{message}}&lt;/h2&gt;
+            &lt;h2&gt; {{total}}&lt;/h2&gt;
+            &lt;button @click=&quot;addCount&quot;&gt;再买一个&lt;/button&gt;
+        </span><span class="token template-punctuation string">`</span></span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span> 
+    <span class="token keyword">const</span> vm<span class="token operator">=</span>app<span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token string">&quot;#app&quot;</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="侦听器的基本写法"><a href="#侦听器的基本写法" class="header-anchor">#</a> 侦听器的基本写法</h3> <p>watch侦听器的作用就是侦听一个data中的值的变化，变化后可以写一个方法，让其进行一些操作（业务逻辑的编写）。</p> <p>在<code>computed</code>代码块的上面编写一段侦听器的代码。</p> <div class="language-js extra-class"><pre class="language-js"><code>watch<span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'count changed'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>上面代码的意思是，写一个侦听器来侦听<code>count</code>的数据变化，当<code>count</code>变化之后立即在控制台打印出<code>count changed</code>。</p> <p>侦听器中的方法还可以接收两个参数，一个是现在的值（current），一个是变化之前的值（prev）。我们分别接收这两个值，并打印在控制台，看一下效果。</p> <div class="language-js extra-class"><pre class="language-js"><code>watch<span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token function">count</span><span class="token punctuation">(</span><span class="token parameter">current<span class="token punctuation">,</span>prev</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'watch changed'</span><span class="token punctuation">)</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'现在的值：'</span><span class="token punctuation">,</span>current<span class="token punctuation">)</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'变化前的值：'</span><span class="token punctuation">,</span>prev<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>在浏览器中可以看到打印的效果。先打印出了3，然后又打印出了2。需要注意的是两个参数的先后顺序，如果不小心，是很容易记反的。</p> <h3 id="侦听器和计算属性的区别"><a href="#侦听器和计算属性的区别" class="header-anchor">#</a> 侦听器和计算属性的区别</h3> <p>这时候问题来了，计算属性也是可以根据变化执行一些操作的，那侦听器watch和计算属性computed的区别是什么？</p> <p>先给出结论，计算属性computed必须要返回一个值，而且在页面渲染的同时就会执行里边的业务逻辑，也就是会先执行一遍你写的业务逻辑，而<code>watch</code>只有发生变化时才会执行，也就是说值没有变化，它是不执行里边业务逻辑的。为了验证结果，先注释掉侦听器watch相关的内容，在计算属性<code>total</code>中写这样的代码。</p> <div class="language-js extra-class"><pre class="language-js"><code>computed<span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token function">total</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'....count changed'</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>price <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span>count
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><h3 id="计算属性-computed-更加简洁"><a href="#计算属性-computed-更加简洁" class="header-anchor">#</a> 计算属性(computed)更加简洁</h3> <p>再来思考一个问题，用watch侦听器，可以写出类似计算属性的代码吗？答案是肯定的。现在我们就就写一个类似计算属性效果。</p> <p>先在data中声明一个新的变量，叫做<code>newTotal</code>，给出一个<code>20</code>的值。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token comment">//....</span>
+        newTotal<span class="token operator">:</span><span class="token number">20</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>然后修改watch中代码，写一个乘法表达式算出<code>总和</code>，赋值给<code>this.newTotal</code>。</p> <div class="language-js extra-class"><pre class="language-js"><code>watch<span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token function">count</span><span class="token punctuation">(</span><span class="token parameter">current<span class="token punctuation">,</span>prev</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>newTotal<span class="token operator">=</span><span class="token keyword">this</span><span class="token punctuation">.</span>price <span class="token operator">*</span> current
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>最后把模板中的渲染值，改为<code>newTotal</code>就可以了。</p> <div class="language-js extra-class"><pre class="language-js"><code>template<span class="token operator">:</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    //......
+    &lt;h2&gt;总和：{{newTotal}}&lt;/h2&gt;
+    //......
+</span><span class="token template-punctuation string">`</span></span>
+</code></pre></div><p>写完这些，你在浏览器中看到的效果和计算是属性是一样的。但是从代码简洁性上，显然侦听器的写法是麻烦并冗余，所以建议优先使用计算属性来完成同样的操作。</p> <h3 id="methods-watch和computed三者使用优先级"><a href="#methods-watch和computed三者使用优先级" class="header-anchor">#</a> methods，watch和computed三者使用优先级</h3> <p>现在总结一下method、watch和computed三者如果都能实现相同的功能，它们之间的取舍和使用优先级。</p> <ul><li><code>computed</code> 和 <code>method</code>都能实现的功能，建议使用computed,因为有缓存，不用渲染页面就刷新。</li> <li><code>computed</code> 和 <code>watch</code> 都能实现的功能，建议使用 computed，因为更加简洁。</li></ul></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-70334359><li class="level-2" data-v-70334359><a href="/blogs/vue3/ji-chu-08-vuezhong-de-zhen-ting-qi-jian-ting-qi-watch.html#【基础08】vue中的侦听器-监听器-watch" class="sidebar-link reco-side-【基础08】vue中的侦听器-监听器-watch" data-v-70334359>【基础08】Vue中的侦听器/监听器-watch</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-08-vuezhong-de-zhen-ting-qi-jian-ting-qi-watch.html#计算属性代码块" class="sidebar-link reco-side-计算属性代码块" data-v-70334359>计算属性代码块</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-08-vuezhong-de-zhen-ting-qi-jian-ting-qi-watch.html#侦听器的基本写法" class="sidebar-link reco-side-侦听器的基本写法" data-v-70334359>侦听器的基本写法</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-08-vuezhong-de-zhen-ting-qi-jian-ting-qi-watch.html#侦听器和计算属性的区别" class="sidebar-link reco-side-侦听器和计算属性的区别" data-v-70334359>侦听器和计算属性的区别</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-08-vuezhong-de-zhen-ting-qi-jian-ting-qi-watch.html#计算属性-computed-更加简洁" class="sidebar-link reco-side-计算属性-computed-更加简洁" data-v-70334359>计算属性(computed)更加简洁</a></li><li class="level-3" data-v-70334359><a href="/blogs/vue3/ji-chu-08-vuezhong-de-zhen-ting-qi-jian-ting-qi-watch.html#methods-watch和computed三者使用优先级" class="sidebar-link reco-side-methods-watch和computed三者使用优先级" data-v-70334359>methods，watch和computed三者使用优先级</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><!----><div><div class="sponsor-container" data-v-a142c76a><div class="sponsor-love position-absolute transition-3ms" data-v-a142c76a>
+    Sponsor
+  </div> <a href="https://github.com/yokefellow/vuepress-plugin-sponsor" target="_blank" title="Github" class="sponsor-github position-absolute transition-3ms" data-v-a142c76a></a> <ul class="sponsor-payment-options transition-3ms" data-v-a142c76a><li id="alipay-option" class="transition-3ms" data-v-a142c76a></li> <li id="wechat-option" class="transition-3ms" data-v-a142c76a></li> <li id="qq-option" class="transition-3ms" data-v-a142c76a></li> <li id="paypal-option" class="transition-3ms" data-v-a142c76a></li></ul> <div class="sponsor-qrcode-container position-absolute" style="display:none;" data-v-a142c76a data-v-a142c76a><div class="sponsor-qrcode-info" style="background-image:url();pointer-events:none;display:none;" data-v-a142c76a data-v-a142c76a></div></div> <div class="sponsor-message position-absolute" style="display:none;" data-v-a142c76a data-v-a142c76a>
+      主人忘记设置啦
+    </div></div></div><!----><!----></div></div>
+    <script src="/assets/js/app.4c347e21.js" defer></script><script src="/assets/js/3.47851a5e.js" defer></script><script src="/assets/js/1.9702ffa3.js" defer></script><script src="/assets/js/30.5022c2f7.js" defer></script>
+  </body>
+</html>
